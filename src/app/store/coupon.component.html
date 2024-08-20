@@ -1,0 +1,9 @@
+    <div class="popup-overlay" *ngIf="isVisible">
+      <div class="popup-content">
+        <div class="close-icon" (click)="closePopup()">&times;</div>
+        <div *ngFor="let coupon of coupons" class="card m-1 p-1 bg-light">
+          <div class="coupon-code">Coupon Code: {{coupon.name}}</div>
+          <div class="coupon-text">{{coupon.description}}</div>
+        </div>
+      </div>
+    </div>

@@ -24,6 +24,20 @@ module.exports = function () {
           { id: 10, name: "Bling King", category: "Chess",
                 description: "Silver-plated, stone-studded King", price: 550 }
       ],
-      orders: []
+      orders: [],
+      coupons: [
+      { id: 1,
+          name: "FLAT10",
+          description: "Avail a flat 10% off on orders above 100$",
+          discount: 10 },
+      { id: 2,
+        name: "FLAT20",
+        description: "Avail a flat 10% off on orders above 500$",
+        discount: 20 },
+      { id: 3,
+        name: "FREEBIE30",
+        description: "Avail a flat 10% off on orders above 1000$",
+        discount: 30 }
+      ]
   }
 }

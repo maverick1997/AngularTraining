@@ -49,6 +49,9 @@
           </select>
         </div>
 
+        <button class="btn btn-info" style="left: 55%; position: absolute;"
+        (click)="showCoupon()">Show Coupon</button>
+
         <div class="btn-group float-end" style="margin-right: 2%;">
           <button *ngFor="let page of pageNumbers"
           (click)="changePage(page)"
@@ -59,4 +62,7 @@
 
       </div>
     </div>
+
+    <!-- Coupon Popup -->
+  <coupons></coupons>
 </div>

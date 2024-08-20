@@ -1,6 +1,8 @@
 import { Injectable } from "@angular/core";
 import { Product } from "./product.model";
 import { Observable, from } from "rxjs";
+import { Order } from "./order.model";
+import { Coupon } from "./coupon.model";
 
 @Injectable()
 export class StaticDataSource {
@@ -27,4 +29,22 @@ export class StaticDataSource {
       //publish...
       return from([this.products]); // state changes..
     }
+
+    saveOrder(order: Order): Observable<Order> {
+      console.log(JSON.stringify(order));
+      return from([order]);
+    }
+
+    private coupons: Coupon[] = [
+      new Coupon(1, "FLAT10", "Avail a flat 10% off on orders above 100$", 10),
+      new Coupon(2, "FLAT20", "Avail a flat 10% off on orders above 500$", 20),
+      new Coupon(3, "FREEBIE30", "Avail a flat 10% off on orders above 1000$", 30)
+  ];
+
+  getCoupons(): Observable<Coupon[]> {
+    //publish...
+    return from([this.coupons]); // state changes..
+  }
+
+
 }
